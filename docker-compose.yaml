@@ -1,0 +1,13 @@
+name: infinity-builder
+services:
+  infinity-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: beschoenen/infinity-builder:latest
+    environment:
+      - REDDIT_API_TOKEN="$REDDIT_API_TOKEN"
+      - REDDIT_USERNAME="$REDDIT_USERNAME"
+    restart: no
+    volumes:
+      - "./output:/output"
